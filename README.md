@@ -10,7 +10,7 @@
 3. Make refernces
 4. Make images/schemes/diagrams
 
-### Potencial references
+### Potential references
 
 - [Visualizing Software Architectures in Virtual Reality with an Island Metaphor](https://doi.org/10.1007/978-3-319-91581-4_13)
 - [Mesh simplification accompanied by its denoising of scanned data](https://doi.org/10.1007/s00366-018-0647-x)

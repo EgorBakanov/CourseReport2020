@@ -12,6 +12,11 @@
 
 %\usepackage{showframe}
 
+% abstract
+\addto\captionsrussian{
+  \renewcommand{\abstractname}{Реферат}
+}
+
 % bibliography
 \bibliographystyle{siam}
 
@@ -20,7 +25,7 @@
 \setlength{\parindent}{1.25cm}
 
 % section
-\titleformat{\section}{\normalfont\Large\bfseries\centering}{\thesection.~}{0.5ex}{}
+\titleformat{\section}{\normalfont\Large\bfseries\centering}{Глава~\thesection.~}{0.5ex}{}
 \newcommand{\sectionbreak}{\clearpage}
 
 % page number
@@ -32,6 +37,7 @@
 % commands
 \newcommand{\emptyunderline}[1]{\underline{\hspace{#1}}}
 \newcommand{\gapforfill}[2]{$\underset{\text{#1}}{\text{\emptyunderline{#2}}}$}
+\newcommand{\addtocsection}[1]{\addcontentsline{toc}{section}{\protect\numberline{}#1}}
 
 % custom glossary
 \newcommand*{\rglossaryline}[2]{
