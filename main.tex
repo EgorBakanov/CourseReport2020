@@ -1,5 +1,6 @@
 ﻿\documentclass[12pt]{article}
 \usepackage{TSU_report}
+\addbibresource{bibliography.bib}
 
 \begin{document}
     \input{sections/Title.tex}
@@ -11,6 +12,5 @@
     \input{sections/Design.tex}
     \input{sections/Implementation.tex}
     \input{sections/Conclusion.tex}
-    \addtocsection{Список литературы}
-    \bibliography{bibliography}
+    \printbibliography[heading=bibintoc, title={Список литературы}]
 \end{document}

@@ -1,4 +1,5 @@
-﻿\usepackage[]{amsmath}
+﻿% packages
+\usepackage[]{amsmath}
 \usepackage[a4paper, right=1.5cm, left=3cm, top=2cm, bottom=2cm]{geometry}
 \usepackage[english, russian]{babel}
 \usepackage{graphicx}
@@ -6,19 +7,29 @@
 \usepackage{setspace}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
-\usepackage{lipsum}
 \usepackage{indentfirst}
 \usepackage{datatool}
+\usepackage{hyperref}
+\usepackage{totcount}
+\usepackage{biblatex}
 
+% testing packages
 %\usepackage{showframe}
+\usepackage{lipsum}
 
-% abstract
+% total counter setup
+\newtotcounter{citnum}
+\def\oldbibitem{} \let\oldbibitem=\bibitem
+\def\bibitem{\stepcounter{citnum}\oldbibitem}
+\regtotcounter{page}
+
+% abstract rename
 \addto\captionsrussian{
   \renewcommand{\abstractname}{Реферат}
 }
 
 % bibliography
-\bibliographystyle{siam}
+% ...
 
 % paragraph
 \onehalfspacing
@@ -26,7 +37,9 @@
 
 % section
 \titleformat{\section}{\normalfont\Large\bfseries\centering}{Глава~\thesection.~}{0.5ex}{}
-\newcommand{\sectionbreak}{\clearpage}
+\newcommand{\sectionbreak}{\newpage\phantomsection}
+\newcommand{\addtocsection}[1]{\addcontentsline{toc}{section}{\protect\numberline{}#1}}
+\newcommand{\unorderedsection}[1]{\section*{#1}\addtocsection{#1}}
 
 % page number
 \pagestyle{fancy}
@@ -34,10 +47,9 @@
 \renewcommand{\headrulewidth}{0pt}
 \fancyfoot[R]{\thepage}
 
-% commands
+% custom commands
 \newcommand{\emptyunderline}[1]{\underline{\hspace{#1}}}
 \newcommand{\gapforfill}[2]{$\underset{\text{#1}}{\text{\emptyunderline{#2}}}$}
-\newcommand{\addtocsection}[1]{\addcontentsline{toc}{section}{\protect\numberline{}#1}}
 
 % custom glossary
 \newcommand*{\rglossaryline}[2]{
