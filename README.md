@@ -3,16 +3,19 @@
 ### TODO
 
 1. ~~Setup project~~
-2. Plan and make proper inner structure
+2. ~~Plan and make proper inner structure~~
    1. ~~General article structure~~
    2. ~~Chapter structure~~
 3. Write article parts
    1. Write abstract
    2. Write introdaction
    3. Write main part
+      1. Write chapter 1
+      2. Write chapter 2
+      3. Write chapter 3
    4. Write conclusion
 4. Make images/schemes/diagrams
-5. Make refernces
+5. Make bibliography
 6. Make glossary
 
 ### Article plan (chapter structure)
