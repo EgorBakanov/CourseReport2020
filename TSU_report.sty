@@ -11,16 +11,26 @@
 \usepackage{datatool}
 \usepackage{hyperref}
 \usepackage{totcount}
+\usepackage{csquotes}
 \usepackage{biblatex}
+\usepackage{ifthen}
+\usepackage{calc}
 
 % testing packages
 %\usepackage{showframe}
 \usepackage{lipsum}
 
-% total counter setup
+% counters
 \newtotcounter{citnum}
-\def\oldbibitem{} \let\oldbibitem=\bibitem
-\def\bibitem{\stepcounter{citnum}\oldbibitem}
+\newcounter{reminder}
+\newcounter{evaluation}
+\newcounter{reg1}
+\newcounter{reg2}
+\newcounter{reg3}
+\newcounter{reg4}
+
+% total counter setup
+\AtEveryBibitem{\stepcounter{citnum}}
 \regtotcounter{page}
 
 % abstract rename
@@ -50,6 +60,29 @@
 % custom commands
 \newcommand{\emptyunderline}[1]{\underline{\hspace{#1}}}
 \newcommand{\gapforfill}[2]{$\underset{\text{#1}}{\text{\emptyunderline{#2}}}$}
+\newcommand{\reminder}[2]{
+  \setcounter{reminder}{#1-#1/#2*#2}
+  \arabic{reminder}
+}
+\newcommand{\evaluate}[1]{
+  \setcounter{evaluation}{#1}
+  \arabic{evaluation}
+}
+\newcommand{\chooseformbynumber}[4]{%
+  \setcounter{reg1}{#1-#1/10*10}%
+  \setcounter{reg2}{(#1-#1/100*100)/10}%
+  \ifthenelse{%
+    \value{reg1}=1\AND\NOT\value{reg2}=1%
+  }{#2}{%
+    \ifthenelse{%
+      \NOT\value{reg2}=1\AND\(%
+        \value{reg1}=2\OR%
+        \value{reg1}=3\OR%
+        \value{reg1}=4%
+      \)%
+    }{#3}{#4}%
+  }%
+}
 
 % custom glossary
 \newcommand*{\rglossaryline}[2]{
