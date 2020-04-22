@@ -15,7 +15,7 @@
       3. Write chapter 3
    4. Write conclusion
 4. Make images/schemes/diagrams
-5. Make bibliography
+5. ~~Make bibliography~~
 6. Make glossary
 
 ### Article plan (chapter structure)
