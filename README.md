@@ -16,7 +16,7 @@
    4. Write conclusion
 4. Make images/schemes/diagrams
 5. ~~Make bibliography~~
-6. Make glossary
+6. ~~Make glossary~~
 
 ### Article plan (chapter structure)
 

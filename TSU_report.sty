@@ -93,15 +93,16 @@
 \newcommand*{\rglossarylineExpl}[3]{
   \DTLnewrow{glossarydb}
   \DTLnewdbentry{glossarydb}{name}{#1}
-  \DTLnewdbentry{glossarydb}{output}{~(#2)~--~#3}
+  \DTLnewdbentry{glossarydb}{output}{~{\it(#2)}~--~#3}
 }
 \newenvironment{rglossary}{
-    \DTLifdbexists{glossarydb}{\DTLcleardb{glossarydb}}{\DTLnewdb{glossarydb}}
+  \DTLifdbexists{glossarydb}{\DTLcleardb{glossarydb}}{\DTLnewdb{glossarydb}}
+  \parskip 1.4ex
 }{
-    \DTLsort{name}{glossarydb}
-    \DTLforeach*{glossarydb}{\name=name,\output=output}{
-      {\bf\name}
-      \output
-      \par
-    }
+  \DTLsort{name}{glossarydb}
+  \DTLforeach*{glossarydb}{\name=name,\output=output}{
+    {\bf\name}
+    \output
+    \par
+  }
 }
