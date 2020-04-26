@@ -13,7 +13,7 @@
 \usepackage{hyperref}
 \usepackage{totcount}
 \usepackage{csquotes}
-\usepackage{biblatex}
+\usepackage[sorting=none]{biblatex}
 \usepackage{ifthen}
 \usepackage{calc}
 \usepackage{xstring}
@@ -108,6 +108,7 @@
   }
 }
 
+% cyrillic sorting fix for glossary
 \renewcommand*{\dtlsetUTFviiicharcode}[2]{%
   \IfEqCase*{#1}{%
     {А}{#2=-80}%
