@@ -8,7 +8,7 @@
    2. ~~Chapter structure~~
 3. Write article parts
    1. ~~Write abstract~~
-   2. Write introdaction
+   2. ~~Write introdaction~~
    3. Write main part
       1. Write chapter 1
       2. Write chapter 2
