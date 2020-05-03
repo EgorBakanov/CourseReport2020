@@ -15,8 +15,11 @@
 \usepackage{csquotes}
 \usepackage[
   backend=biber, 
-  sorting=none,
-  doi=false
+  language=auto,
+  autolang=other,
+  style=gost-numeric,
+  doi=false,
+  sorting=none
 ]{biblatex}
 \usepackage{ifthen}
 \usepackage{calc}
@@ -48,6 +51,8 @@
 % paragraph
 \onehalfspacing
 \setlength{\parindent}{1.25cm}
+\titleformat{\paragraph}[hang]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{0.5em}
 
 % section
 \titleformat{\section}{\normalfont\Large\bfseries\centering}{Глава~\thesection.~}{0.5ex}{}
