@@ -10,9 +10,6 @@
    1. ~~Write abstract~~
    2. ~~Write introdaction~~
    3. Write main part
-      1. ~~Write chapter 1~~
-      2. Write chapter 2
-      3. Write chapter 3
    4. Write conclusion
 4. Make images/schemes/diagrams
 5. ~~Make bibliography~~
@@ -31,7 +28,7 @@
    2. Описание структуры клиентской и серверной части *(?)*
    3. Оптимизационные подходы *(принципы и теория)*
 4. Глава 3: Реализация
-   1. Обзор инструментов
+   1. ~~Обзор инструментов~~
    2. Серверная часть
    3. Клиентская часть
 5. Заключение
