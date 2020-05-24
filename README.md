@@ -8,9 +8,9 @@
    2. ~~Chapter structure~~
 3. Write article parts
    1. ~~Write abstract~~
-   2. ~~Write introdaction~~
+   2. ~~Write introduction~~
    3. Write main part
-   4. Write conclusion
+   4. ~~Write conclusion~~
 4. Make images/schemes/diagrams
 5. ~~Make bibliography~~
 6. ~~Make glossary~~
@@ -31,4 +31,4 @@
    1. ~~Обзор инструментов~~
    2. Серверная часть
    3. Клиентская часть
-5. Заключение
+5. ~~Заключение~~
