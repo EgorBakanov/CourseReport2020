@@ -1,3 +1,48 @@
 ﻿\subsection{Клиентская часть}
 
 \lipsum[6]
+
+\paragraph{Загрузка модели}
+
+\lipsum[6]
+
+\paragraph{Размещение модели}
+
+\lipsum[6]
+
+\paragraph{Слои модели}
+
+\lipsum[6]
+
+\paragraph{Режим слоя: срезка}
+
+\lipsum[6]
+
+\comment{
+    TODO:
+
+    - возможно какое-нибудь вступление
+    - загрузка модели из AssetBundle'а
+        скорее всего нужно запихать UML с классами 
+    - размещение модели в сцене
+        координатная модель Unity на трансформах
+        можно добавить формулу вычисления позиции и скейла
+            можно добавить UML для "public void Place(GameObject obj)" метода
+            https://tfs.rubius.com/DevSaunaProjects/_git/BIMExplorer?path=%2FAssets%2FScripts%2FModelScaling%2FStand.cs&version=GBdev
+    - Слои модели
+        точно UML с классами
+            Layer, LayerMode + несколько режимов
+            https://tfs.rubius.com/DevSaunaProjects/_git/BIMExplorer?path=%2FAssets%2FScripts%2FModelLayers&version=GBdev
+        описать пример работы слоев
+        сказать, что для подсветки была взята готовая реализация
+    - Режим слоя-срезка
+        сказать про переключение шейдера
+            https://tfs.rubius.com/DevSaunaProjects/_git/BIMExplorer?path=%2FAssets%2FScripts%2FModelLayers%2FCrossSectionMode.cs&version=GBdev
+        общая идея шейдера
+            сказать про разные версии шейдера
+                прозрачный-непрозрачный
+                metalic-specular
+            https://tfs.rubius.com/DevSaunaProjects/_git/BIMExplorer?path=%2FAssets%2FShaders%2FLayers%2FMetalicCrossSection.shader&version=GBdev
+
+    Добавить картинку/ки с демонстрацией переключения слоев
+}
