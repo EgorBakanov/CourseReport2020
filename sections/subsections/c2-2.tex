@@ -65,33 +65,61 @@
 \begin{enumerate}
     \item {
         Загрузка готовой модели.
+        Приложение должно загружать выбранную упакованную модель.
+        Так как в рамках прототипа не производится реализация удаленного сервера,
+        загрузка будет происходить локально, как показано на рисунке~%
+        \ref{figure:CModelLoader}.
 
         \begin{figure}[h]
             \centering
             \includegraphics[width=\textwidth*6/10]{example-image}
             \caption{Загрузчик моделей}
-            \label{figure:ClModelLoader}
+            \label{figure:CModelLoader}
         \end{figure}
+
+        \intextcomment{
+            Описание UML-схемы...
+        }
     } 
     \item {
         Размещение модели в виртуальной среде.
+        После загрузки модель должна размещаться в виртуальной сцене.
+        Для визуализации будет использоваться виртуальный стол,
+        на который будет проецироваться модель здания
+        в уменьшенном масштабе согласно схеме на рисунке~%
+        \ref{figure:CStand}.
 
         \begin{figure}[h]
             \centering
             \includegraphics[width=\textwidth*6/10]{example-image}
-            \caption{Размещение моделей}
-            \label{figure:ClStand}
+            \caption{Размещение модели}
+            \label{figure:CStand}
         \end{figure}
+
+        \intextcomment{
+            Описание UML-схемы...
+        }
     } 
     \item {
-        Взаимодействие с элементами модели
+        Взаимодействие с элементами модели.
+        После размещения модель будет разбивать на слои,
+        представляющие отдельные структурные элементы здания,
+        например стены, лестницы или двери.
+        На каждый отдельный слой может накладываться эффект,
+        изменяющий его отображение.
+        На рисунке~\ref{figure:CLayers} показана
+        структура системы слоев.
 
         \begin{figure}[h]
             \centering
             \includegraphics[width=\textwidth*6/10]{example-image}
             \caption{Система слоев}
-            \label{figure:ClLayers}
+            \label{figure:CLayers}
         \end{figure}
+
+        \intextcomment{
+            Описание UML-схемы...
+        }
     } 
 \end{enumerate}
 
