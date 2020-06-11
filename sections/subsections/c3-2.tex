@@ -147,13 +147,13 @@
 Для автоматического импортирования моделей в промежуточный проект
 необходимо создать скрипт, который можно запускать из командной строки
 без участия пользователя.\cite{DocUnity}
-Общий алгоритм импорта моделей показан на рисунке~\ref{figure:SImport}.
+Общий алгоритм импорта моделей показан на рисунке~\ref{figure:SImportModels}.
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.6\textwidth]{example-image}
-    \caption{Импорт моделей}
-    \label{figure:SImport}
+    \caption{Импорт моделей.}
+    \label{figure:SImportModels}
     \comment{ModelImport.ImportAllAssets}
 \end{figure}
 
@@ -169,7 +169,7 @@
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.6\textwidth]{example-image}
-    \caption{Постобработчик моделей}
+    \caption{Постобработчик моделей.}
     \label{figure:CPostprocessor}
     \comment{AssetPostprocessor +
     ModelPreprocessor(переименовать в ModelPostprocessor) +
@@ -184,7 +184,7 @@
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.6\textwidth]{example-image}
-    \caption{Извлечение атрибутивной информации модели}
+    \caption{Извлечение атрибутивной информации модели.}
     \label{figure:SPostprocessor}
     \comment{ModelPreprocessor.OnPostprocessGameObjectWithUserProperties}
 \end{figure}
@@ -195,15 +195,49 @@
 
 \paragraph{Упаковка моделей}
 
+Финальным шагом обработки информационных моделей является упаковка.
+Для этого был выбран механизм фреймворка Unity называющийся AssetBundle.
+AssetBundle это архив, содержащий не скриптовые ресурсы,
+например модели или текстуры, который можно динамически загружать
+или выгружать в момент выполнения приложения.
+Пакеты могут обладать взаимными зависимостями, например графический материал,
+упакованный в один AssetBundle может использовать текстуру,
+упакованную в другой AssetBundle (рисунок~\ref{figure:AssetBundleDependency}),
+что может сильно уменьшить расход памяти, если таких пакетов
+с графическими материалами станет несколько.%
+\cite{DocUnity,UnityAssetsResourcesBundles}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/AssetBundleDependency.png}
+    \caption{Взаимозависимости ресурсных пакетов.%
+    \cite{UnityAssetsResourcesBundles}}
+    \label{figure:AssetBundleDependency}
+\end{figure}
+
+Помимо этого AssetBundle обладает встроенными механизмами сжатия,
+а также механизмами версионности и кеширования,
+что позволит эффективнее справляться с модификациями информационной модели.%
+\cite{DocUnity,UnityAssetsResourcesBundles}
+Создание ресурсных пакетов тоже может быть полностью автоматическим,
+что показано на рисунке~\ref{figure:SExportBundles}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{example-image}
+    \caption{Экспорт пакетов}
+    \label{figure:SExportBundles}
+    \comment{ModelImport.ExportAssetBundles}
+\end{figure}
+
+\intextcomment{
+    Описание UML-схемы...
+}
 
 \comment{
     TODO:
 
-    - Упаковка моделей
-        Рассказать про механизм AssetBundle'ов
-        Показать, как создаются
-            можно через UML
-        Сказать, что после упаковки бандлы можно передовать по сети и кэшировать
+    Запилить UML!
 
     скрипты смотреть тут
         C:\Users\Egor\Rubius\model-import-test\Assets\Scripts\ModelImport\Editor
