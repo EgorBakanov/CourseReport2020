@@ -71,19 +71,16 @@
 
         \begin{figure}[ht]
             \centering
-            \includegraphics[width=0.6\textwidth]{example-image}
+            \includegraphics[width=0.8\textwidth]{images/UML-CLayers.pdf}
             \caption{Система слоев.}
             \label{figure:CLayers}
         \end{figure}
 
-        \intextcomment{
-            Описание UML-схемы...
-        }
+        Класс Layer представляет слой информационной модели.
+        Он обеспечивает доступ ко всем необходимым для визуализации данным,
+        позволяя модифицировать их при изменении режима отображения слоя
+        (абстрактный класс LayerMode).
+        Подробности реализации различных режимов отображения
+        приведены в разделе~\ref{subsections:ClientImpl}.
     } 
 \end{itemize}
-
-\comment{
-    TODO:
-
-    Запилить UML!
-}
