@@ -29,21 +29,15 @@ AssetBundle это архив, содержащий не скриптовые р
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{example-image}
+    \includegraphics[width=1.0\textwidth]{images/UML-SExportBundles.pdf}
     \caption{Экспорт пакетов}
     \label{figure:SExportBundles}
-    \comment{ModelImport.ExportAssetBundles}
 \end{figure}
 
-\intextcomment{
-    Описание UML-схемы...
-}
-
-\comment{
-    TODO:
-
-    Запилить UML!
-
-    скрипты смотреть тут
-        C:\Users\Egor\Rubius\model-import-test\Assets\Scripts\ModelImport\Editor
-}
+Для создания AssetBundle'ов необходимо вызвать соответствующий метод
+у класса, отвечающего за программное инициирование сборки проекта Unity
+(\emph{BuildPipeline}). В методе необходимо указать конечную директорию,
+в которой будут размещены пакеты, а также информацию по каждому создаваемому пакету,
+включающую название пакета, перечень ресурсов, включаемых в пакет,
+а также соответствующие ресурсам имена, используемые при извлечении
+ресурсов во время работы приложения.\cite{DocUnity,UnityAssetsResourcesBundles}
