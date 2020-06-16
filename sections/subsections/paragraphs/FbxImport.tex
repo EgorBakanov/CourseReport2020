@@ -83,21 +83,16 @@
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{example-image}
+    \includegraphics[width=1.0\textwidth]{images/UML-SPostprocessor.pdf}
     \caption{Извлечение атрибутивной информации модели.}
     \label{figure:SPostprocessor}
     \comment{ModelPreprocessor.OnPostprocessGameObjectWithUserProperties}
 \end{figure}
 
-\intextcomment{
-    Описание UML-схемы...
-}
-
-\comment{
-    TODO:
-
-    Запилить UML!
-
-    скрипты смотреть тут
-        C:\Users\Egor\Rubius\model-import-test\Assets\Scripts\ModelImport\Editor
-}
+Извлекаемая атрибутивная хранится в первом элементе
+входного массива \emph{values} в текстовом виде.
+Для извлечения информации из полученной строки используется метод
+\emph{ExtractModelData}, возвращающий извлеченную атрибутивную информацию
+в виде массива ключ-значение.
+После чего извлеченная информация сохраняется в компоненте \emph{ModelData},
+добавленном к обрабатываемому объекту.
