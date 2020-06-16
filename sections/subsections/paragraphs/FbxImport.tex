@@ -40,15 +40,17 @@
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.6\textwidth]{example-image}
+    \includegraphics[width=1.0\textwidth]{images/UML-SImportModels.pdf}
     \caption{Импорт моделей.}
     \label{figure:SImportModels}
-    \comment{ModelImport.ImportAllAssets}
 \end{figure}
 
-\intextcomment{
-    Описание UML-схемы...
-}
+Для импорта новых ресурсов в проект Unity необходимо скопировать
+файлы в директорию проекта (<путь к проекту>/Assets)
+и вызвать метод обновления базы данных ресурсов Unity (AssetDatabase),
+что приведет к импорту всех новых или измененных ресурсов,
+а также отчистке базы данных от уже несуществующих.%
+\cite{DocUnity}
 
 На стадии импорта моделей можно также проводить извлечение
 сохранившейся в модели атрибутивной информации.
@@ -66,8 +68,9 @@
 \end{figure}
 
 \intextcomment{
-    Описание UML-схемы...
-} Сам процесс извлечения атрибутивной информации показан
+    Описание UML-схемы...%
+}
+Сам процесс извлечения атрибутивной информации показан
 на рисунке~\ref{figure:SPostprocessor}.
 
 \begin{figure}[ht]
