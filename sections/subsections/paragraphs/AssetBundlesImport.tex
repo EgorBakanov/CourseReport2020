@@ -6,4 +6,57 @@
 в рамках прототипа реализована загрузка упакованной модели
 с локального дискового устройства.
 
-\dots
+Для определения того, какие информационные модели прошли упаковку
+и доступны для загрузки, необходимо сначала загрузить дополнительный AssetBundle,
+автоматически создаваемый в процессе упаковки моделей
+и называемый в фреймворке Unity манифестом ресурсных пакетов.
+Этот AssetBundle содержит перечень всех пакетов, созданных во время экспорта.%
+\cite{DocUnity,UnityAssetsResourcesBundles}
+Загрузка манифеста будет осуществляться при инициализации загрузчика,
+как это показано на рисунке~\ref{figure:SInitModelLoader}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{example-image}
+    \caption{Инициализация загрузчика моделей}
+    \label{figure:SInitModelLoader}
+    \comment{ModelLoader.Start}
+\end{figure}
+
+\intextcomment{
+    Описание UML со ссылкой на рисунок
+    \ref{figure:SLocalLoadManifestBundle}\dots
+}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{example-image}
+    \caption{Загрузка локально расположенного манифеста пакетов}
+    \label{figure:SLocalLoadManifestBundle}
+    \comment{LocalModelLoader.LoadManifestBundle}
+\end{figure}
+
+После инициализации загрузчик может принимать запросы моделей,
+которые будет обрабатывать асинхронно, как изображено
+на схеме~\ref{figure:SModelRequest}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{example-image}
+    \caption{Запрос загрузки модели}
+    \label{figure:SModelRequest}
+    \comment{ModelLoader.GetModelInternal в качестве ModelLoader.GetModel}
+\end{figure}
+
+\intextcomment{
+    Описание UML со ссылкой на рисунок
+    \ref{figure:SLocalLoadBundle}\dots
+}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.6\textwidth]{example-image}
+    \caption{Загрузка локально расположенного ресурсного пакета}
+    \label{figure:SLocalLoadBundle}
+    \comment{LocalModelLoader.LoadBundle}
+\end{figure}
