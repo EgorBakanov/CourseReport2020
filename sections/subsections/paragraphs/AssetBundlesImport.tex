@@ -17,21 +17,23 @@
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=0.6\textwidth]{example-image}
+    \includegraphics[width=1.0\textwidth]{images/UML-SInitModelLoader.pdf}
     \caption{Инициализация загрузчика моделей.}
     \label{figure:SInitModelLoader}
     \comment{ModelLoader.Start}
 \end{figure}
 
-\intextcomment{
-    Описание UML со ссылкой на рисунок
-    \ref{figure:SLocalLoadManifestBundle}\dots
-}
+Механизм инициализации загрузчика представляет собой асинхронную загрузку
+ресурсного пакета, содержащего манифест, а за тем асинхронное его извлечение.
+Процесс получение запроса пакета, содержащего манифест, не определен
+в классе \emph{ModelLoader} и реализуется в его дочерних классах,
+например на рисунке~\ref{figure:SLocalLoadManifestBundle} показана реализация
+для локальной загрузки в классе \emph{LocalModelLoader}.
 
 \begin{figure}[!htp]
     \centering
     \includegraphics[width=0.6\textwidth]{example-image}
-    \caption{Загрузка локально расположенного манифеста пакетов.}
+    \caption{Загрузка локально-расположенного манифеста пакетов.}
     \label{figure:SLocalLoadManifestBundle}
     \comment{LocalModelLoader.LoadManifestBundle}
 \end{figure}
@@ -56,7 +58,7 @@
 \begin{figure}[!htp]
     \centering
     \includegraphics[width=0.6\textwidth]{example-image}
-    \caption{Загрузка локально расположенного ресурсного пакета.}
+    \caption{Загрузка локально-расположенного ресурсного пакета.}
     \label{figure:SLocalLoadBundle}
     \comment{LocalModelLoader.LoadBundle}
 \end{figure}
