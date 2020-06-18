@@ -28,16 +28,16 @@
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=0.6\textwidth]{example-image}
+    \includegraphics[width=0.8\textwidth]{images/UML-SLayerSetMode.pdf}
     \caption{Изменение режима отображения слоя модели.}
     \label{figure:SLayerSetMode}
-    \comment{Layer.SetLayerMode вместо Layer.Current}
 \end{figure}
 
-\intextcomment{
-    Описание UML\dots
-}
-Всего в рамках прототипа было реализовано 4 режима отображения:
+В рамках прототипа предполагалось, что режимам отображения слоя
+достаточно иметь какое-либо поведение только при их добавлении и снятии,
+поэтому в текущей реализации реализованы только методы
+\emph{OnSet} и \emph{OnRemove}, хотя в дальнейшем
+их набор может быть расширен. Всего было реализовано 4 режима отображения:
 
 \begin{itemize}
     \item {
