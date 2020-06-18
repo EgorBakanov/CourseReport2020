@@ -11,7 +11,7 @@
    2. ~~Write introduction~~
    3. ~~Write main part~~
    4. ~~Write conclusion~~
-4. Make images/schemes/diagrams
+4. ~~Make images/schemes/diagrams~~
 5. ~~Make bibliography~~
 6. ~~Make glossary~~
 
