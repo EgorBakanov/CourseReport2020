@@ -5,22 +5,24 @@
 например стены, окна или лестницы. На любой выделенный слой
 можно накладывать эффект отображения, как это описывалось
 в разделе~\ref{subsections:ClientServerDesign}.
-
 Для разбиения модели на слои реализуется вспомогательный класс
 \emph{LayerController}, чей принцип работы показан
 на схеме~\ref{figure:SInitLayers}.
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=0.6\textwidth]{example-image}
+    \includegraphics[width=0.9\textwidth]{images/UML-SInitLayers.pdf}
     \caption{Разбиение модели на слои.}
     \label{figure:SInitLayers}
-    \comment{LayerController.InitLayers вместо LayerController.Init}
 \end{figure}
 
-\intextcomment{
-    Описание UML\dots
-}
+Слои модели были реализованы с помощью компонента \emph{Layer}.
+Для разбиения на слои можно воспользоваться тем фактом,
+что при экспорте модель проходила процесс статического батчинга
+(разделы \ref{subsections:Optimization} и \ref{subsections:ServerImpl}),
+тем самым каждый потенциальный слой модели имеет свой компонент \emph{Renderer},
+отвечающий за отрисовку, и является дочерним по отношению к самой модели.
+Следовательно, каждый такой объект можно рассматривать как слой модели.
 После разбиения каждому слою модели может быть назначен
 свой режим отображения, как показано на рисунке~\ref{figure:SLayerSetMode}.
 
