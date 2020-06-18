@@ -20,7 +20,6 @@
     \includegraphics[width=1.0\textwidth]{images/UML-SInitModelLoader.pdf}
     \caption{Инициализация загрузчика моделей.}
     \label{figure:SInitModelLoader}
-    \comment{ModelLoader.Start}
 \end{figure}
 
 Механизм инициализации загрузчика представляет собой асинхронную загрузку
@@ -35,30 +34,37 @@
     \includegraphics[width=0.7\textwidth]{images/UML-SLocalLoadManifestBundle.pdf}
     \caption{Загрузка локально-расположенного манифеста пакетов.}
     \label{figure:SLocalLoadManifestBundle}
-    \comment{LocalModelLoader.LoadManifestBundle}
 \end{figure}
 
 После инициализации загрузчик может принимать запросы моделей,
 которые будет обрабатывать асинхронно, как изображено
 на схеме~\ref{figure:SModelRequest}.
+Загрузка ресурсного пакета с целевой информационной моделью аналогична тому,
+как происходит загрузка манифеста: сначала происходит
+асинхронная загрузка нужного ресурсного пакета,
+а за тем асинхронное извлечение содержимого.
+Процесс получения запроса нужного ресурсного пакета,
+как и в случае с манифестом, не определен в классе \emph{ModelLoader},
+а потому реализуется в дочернем классе,
+как это показано на схеме~\ref{figure:SLocalLoadBundle}.
+В отличие от загрузки манифеста теперь также требуется
+отслеживать наличие уже загруженных информационных моделей (\emph{currentBundle})
+для избежания перерасхода оперативной памяти.
+Еще одним отличием выступает необходимость возврата загруженной модели
+в асинхронном запросе, что реализовано через передачу в запрос
+функции обратного вызова (\emph{onCompleteEvent}).
 
 \begin{figure}[!htp]
     \centering
-    \includegraphics[width=0.6\textwidth]{example-image}
+    \includegraphics[width=1.0\textwidth]{images/UML-SModelRequest.pdf}
     \caption{Запрос загрузки модели.}
     \label{figure:SModelRequest}
     \comment{ModelLoader.GetModelInternal в качестве ModelLoader.GetModel}
 \end{figure}
-
-\intextcomment{
-    Описание UML со ссылкой на рисунок
-    \ref{figure:SLocalLoadBundle}\dots
-}
 
 \begin{figure}[!htp]
     \centering
     \includegraphics[width=0.8\textwidth]{images/UML-SLocalLoadBundle.pdf}
     \caption{Загрузка локально-расположенного ресурсного пакета.}
     \label{figure:SLocalLoadBundle}
-    \comment{LocalModelLoader.LoadBundle}
 \end{figure}
